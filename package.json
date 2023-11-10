@@ -1,0 +1,14 @@
+{
+  "name": "Debugging-env-browser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "lecepin",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^27"
+  }
+}
