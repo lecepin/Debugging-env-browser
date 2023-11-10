@@ -8,3 +8,6 @@
 Chrome 94 版本不再放行，无法再携带 Cookies，也就是 Electron v14 之后的版本无法通过 `webSecurity: false` 来禁用这些问题。
 
 新版本(v27)，通过复写 `onHeadersReceived` 实现。
+
+
+![image](https://github.com/lecepin/Debugging-env-browser/assets/11046969/e13e7815-71fa-4444-bc4d-85b085358dd5)
