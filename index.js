@@ -17,14 +17,13 @@ function disableSamesiteCookies(filter = ["*://*/*"]) {
   session.defaultSession.webRequest.onHeadersReceived(
     { urls: filter },
     (details, callback) => {
-      const cookies = details?.responseHeaders?.["set-cookie"];
       const newCookies = [];
 
-      Array.isArray(cookies) &&
-        cookies.map((it) =>
-          newCookies.push(it.split("; ")[0] + "; Secure; SameSite=None")
-        );
+      details?.responseHeaders?.["set-cookie"]?.map((item) =>
+        newCookies.push(item.split("; ")[0] + "; Secure; SameSite=None")
+      );
       details.responseHeaders["set-cookie"] = cookies;
+
       callback({ cancel: false, responseHeaders: details.responseHeaders });
     }
   );
