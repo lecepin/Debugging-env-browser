@@ -22,7 +22,7 @@ function disableSamesiteCookies(filter = ["*://*/*"]) {
       details?.responseHeaders?.["set-cookie"]?.map((item) =>
         newCookies.push(item.split("; ")[0] + "; Secure; SameSite=None")
       );
-      details.responseHeaders["set-cookie"] = cookies;
+      details.responseHeaders["set-cookie"] = newCookies;
 
       callback({ cancel: false, responseHeaders: details.responseHeaders });
     }
